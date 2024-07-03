@@ -1,0 +1,6 @@
+package com.projectmanagement.service;
+
+public interface ProjectService {
+
+	public Project saveProject;
+}

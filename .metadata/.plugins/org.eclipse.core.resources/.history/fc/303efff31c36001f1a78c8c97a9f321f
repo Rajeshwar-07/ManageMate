@@ -1,0 +1,19 @@
+package com.projectmanagement.model;
+
+import java.sql.Date;
+
+public class Project {
+
+	
+	private Long projectId;
+	
+	private String projectName;
+	
+	private String projectDescription;
+	
+	private Date startDate;
+	
+	private Date endDate;
+	
+	
+}

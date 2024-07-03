@@ -1,0 +1,7 @@
+package com.projectmanagement.service.impl;
+
+import com.projectmanagement.service.ProjectService;
+
+public class ProjectServiceImpl implements ProjectService {
+
+}

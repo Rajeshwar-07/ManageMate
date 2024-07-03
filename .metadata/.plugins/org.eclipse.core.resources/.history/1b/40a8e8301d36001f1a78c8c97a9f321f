@@ -1,0 +1,21 @@
+package com.projectmanagement.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Task {
+	
+	@Id
+	private Long taskId;
+	
+	private String taskName;
+	
+	private String taskDescription;
+}

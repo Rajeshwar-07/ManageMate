@@ -1,0 +1,93 @@
+package com.projectmanagement.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.event.TransactionPhase;
+import org.springframework.transaction.event.TransactionalEventListener;
+
+import com.projectmanagement.dto.UserDto;
+import com.projectmanagement.eventListener.ProjectEventListener;
+import com.projectmanagement.events.ProjectCreatedEvent;
+import com.projectmanagement.model.Project;
+import com.projectmanagement.model.Users;
+import com.projectmanagement.repository.ProjectRepository;
+import com.projectmanagement.repository.UserRepository;
+import com.projectmanagement.service.UsersService;
+
+@Service
+public class UsersServiceImpl implements UsersService {
+
+	
+	private final UserRepository userRepository;
+	private final ProjectRepository projectRepository;
+
+	public UsersServiceImpl(UserRepository userRepository, ProjectRepository projectRepository) {
+		this.userRepository = userRepository;
+		this.projectRepository = projectRepository;
+	}
+
+	@Override
+	public UserDto createUser(Users user, Long projectId) {
+		Project project = findProjectById(projectId);
+		user.setProject(project);
+
+		Users saveUser = userRepository.save(user);
+		return mapToDto(saveUser);
+	}
+
+	private Project findProjectById(Long projectId) {
+		return projectRepository.findById(projectId)
+				.orElseThrow(() -> new IllegalArgumentException("Project is not found with ID: "));
+	}
+
+	@Override
+	public UserDto getUserById(Long userId) {
+		Users findUser = userRepository.findById(userId).get();
+		return mapToDto(findUser);
+	}
+
+	@Override
+	public List<UserDto> getUserList() {
+		return userRepository.findAll().stream().map(this::mapToDto).collect(Collectors.toList());
+	}
+
+	@Override
+	public String deleteUsers(Long userId) {
+		Users deleteUser = userRepository.findById(userId).get();
+		if (deleteUser != null) {
+			userRepository.deleteById(userId);
+			return "Delete Successfully";
+		}
+		return null;
+	}
+
+	@Override
+	public Users updateUser(Long userId, Users updatedUser) {
+		Optional<Users> existingUser = userRepository.findById(userId);
+		if (existingUser != null) {
+			Users user = existingUser.get();
+			user.setName(updatedUser.getName());
+			user.setEmail(updatedUser.getEmail());
+			return userRepository.save(user);
+		}
+		return null;
+	}
+
+	private UserDto mapToDto(Users user) {
+		UserDto userDto = new UserDto();
+		userDto.setUserId(user.getUserId());
+		userDto.setName(user.getName());
+		userDto.setEmail(user.getEmail());
+		userDto.setProjectId(user.getProject().getProjectId());
+		userDto.setTasksId(user.getTasks());
+		return userDto;
+	}
+	
+}

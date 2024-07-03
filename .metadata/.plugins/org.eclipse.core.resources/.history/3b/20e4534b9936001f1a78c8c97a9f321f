@@ -1,0 +1,50 @@
+package com.projectmanagement.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.projectmanagement.model.Users;
+import com.projectmanagement.repository.UserRepository;
+import com.projectmanagement.service.UsersService;
+
+@Service
+public class UsersServiceImpl implements UsersService {
+
+	private final UserRepository userRepository;
+
+	public UsersServiceImpl(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+
+	@Override
+	public Users createUser(Users user) {
+		Users saveUser = userRepository.save(user);
+		return saveUser;
+	}
+
+	@Override
+	public Users getUserById(Long userId) {
+		Users findUser = userRepository.findById(userId).get();
+		return findUser;
+	}
+
+	@Override
+	public List<Users> getUserList() {
+		List<Users> getUserList = userRepository.findAll();
+		return getUserList;
+	}
+
+	@Override
+	public String deleteUsers(Long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Users updateUser(Users updatedUser) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

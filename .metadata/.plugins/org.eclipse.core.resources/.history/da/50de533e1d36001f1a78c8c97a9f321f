@@ -1,0 +1,28 @@
+package com.projectmanagement.model;
+
+import java.sql.Date;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Project {
+
+
+	private Long projectId;
+	
+	private String projectName;
+	
+	private String projectDescription;
+	
+	private Date startDate;
+	
+	private Date endDate;
+	
+	
+}

@@ -1,0 +1,24 @@
+package com.projectmanagement.dto;
+
+import java.sql.Date;
+import java.util.List;
+
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
+public class ProjectDto {
+
+	private Long projectId;
+
+	private String projectName;
+
+	private String projectDescription;
+
+	@Temporal(TemporalType.DATE)
+	private Date startDate;
+
+	private Date endDate;
+
+	private List<?> user;
+
+}

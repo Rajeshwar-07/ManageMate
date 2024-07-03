@@ -1,0 +1,27 @@
+package com.projectmanagement.dto;
+
+import java.util.List;
+
+import com.projectmanagement.model.Project;
+import com.projectmanagement.model.Task;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserDto {
+
+	private Long userId;
+
+	private String name;
+
+	private String email;
+
+	private Project project;
+
+	private List<Task> tasks;
+
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.apache.tomcat.util.http.ConcurrentDateFormat"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="com.projectmanagement.service.CommentService"/>
+    <fullyQualifiedTypeName name="com.projectmanagement.model.Comment"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.projectmanagement.dto.CommentDto"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="com.projectmanagement.service.impl.CommentServiceImpl"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationEvent"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationEventPublisher"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.projectmanagement.events.ProjectCreatedEvent"/>
+    <fullyQualifiedTypeName name="org.springframework.context.event.EventListener"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.event.TransactionalEventListener"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.event.TransactionPhase"/>
+    <fullyQualifiedTypeName name="org.springframework.scheduling.annotation.EnableAsync"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Configurable"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Executor"/>
+    <fullyQualifiedTypeName name="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
+    <fullyQualifiedTypeName name="org.springframework.scheduling.annotation.Async"/>
+    <fullyQualifiedTypeName name="com.projectmanagement.events.ProjectDeletedEvent"/>
+    <fullyQualifiedTypeName name="java.time.LocalTime"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+</qualifiedTypeNameHistroy>

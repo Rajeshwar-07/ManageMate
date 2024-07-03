@@ -1,0 +1,30 @@
+package com.projectmanagement.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.projectmanagement.model.Project;
+import com.projectmanagement.repository.ProjectRepository;
+import com.projectmanagement.service.ProjectService;
+
+@Service
+public class ProjectServiceImpl implements ProjectService {
+
+	private final ProjectRepository repository;
+
+	public ProjectServiceImpl(ProjectRepository repository) {
+		this.repository = repository;
+	}
+
+	@Override
+	public Project saveProject(Project project) {
+		Project saveProject = repository.save(project);
+		return saveProject;
+	}
+
+	@Override
+	public Project getProjectById(Long projectId) {
+		Project findProject = repository.findById(projectId);
+		return findProject;
+	}
+
+}

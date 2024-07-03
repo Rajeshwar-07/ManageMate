@@ -1,0 +1,5 @@
+package com.projectmanagement.model;
+
+public class Task {
+
+}

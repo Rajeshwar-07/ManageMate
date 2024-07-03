@@ -1,0 +1,47 @@
+package com.projectmanagement.service.impl;
+
+import java.util.List;
+
+import com.projectmanagement.model.Comment;
+import com.projectmanagement.repository.CommentRepository;
+import com.projectmanagement.service.CommentService;
+
+public class CommentServiceImpl implements CommentService{
+
+	private final CommentRepository commentRepository;
+	
+	public CommentServiceImpl(CommentRepository commentRepository) {
+		this.commentRepository = commentRepository;
+	}
+	
+	@Override
+	public Comment createComment(Comment comment) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Comment getCommentById(Long commentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Comment> getCommentList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteComment(Long commentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Comment updateComment(Long commentId, Comment updateComment) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

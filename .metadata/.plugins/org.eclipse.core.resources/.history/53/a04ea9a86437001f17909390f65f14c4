@@ -1,0 +1,22 @@
+package com.projectmanagement.dto;
+
+import java.util.List;
+
+
+import com.projectmanagement.model.Comment;
+import com.projectmanagement.model.Project;
+import com.projectmanagement.model.Task;
+
+
+public class UserDto {
+
+	private Long userId;
+
+	private String name;
+
+	private String email;
+
+	private List<Task> tasks;
+
+	private List<Project> project;
+}

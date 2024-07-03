@@ -1,0 +1,19 @@
+package com.projectmanagement.service;
+
+import java.util.List;
+
+import com.projectmanagement.model.Project;
+import com.projectmanagement.model.Task;
+
+public interface TaskService {
+
+	public Task createTask(Project projectId, Task task);
+
+	public Task getTaskById(Long taskId);
+
+	public List<Task> getTaskList();
+
+	public String deleteTask(Long taskId);
+
+	public Task updateTask(Long taskId, Task updatedTask);
+}

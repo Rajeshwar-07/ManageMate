@@ -1,0 +1,19 @@
+package com.projectmanagement.service;
+
+import java.util.List;
+
+import com.projectmanagement.model.Project;
+
+public interface ProjectService {
+
+	public Project saveProject(Project project);
+
+	public Project getProjectById(Long projectId);
+
+	public List<Project> getListOfProject();
+
+	public String deleteProject(Long projectId);
+
+	public Project updateProject(Long projectId, Project updatedProject);
+
+}

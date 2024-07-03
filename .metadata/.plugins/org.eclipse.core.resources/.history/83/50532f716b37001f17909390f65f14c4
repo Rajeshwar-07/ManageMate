@@ -1,0 +1,62 @@
+package com.projectmanagement.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.projectmanagement.model.Project;
+import com.projectmanagement.repository.ProjectRepository;
+import com.projectmanagement.service.ProjectService;
+
+@Service
+public class ProjectServiceImpl implements ProjectService {
+
+	private final ProjectRepository repository;
+
+	public ProjectServiceImpl(ProjectRepository repository) {
+		this.repository = repository;
+	}
+
+	@Override
+	public Project saveProject(Project project) {
+		Project saveProject = repository.save(project);
+		return saveProject;
+	}
+
+	@Override
+	public Project getProjectById(Long projectId) {
+		Project findProject = repository.findById(projectId).get();
+		return findProject;
+	}
+
+	@Override
+	public List<Project> getListOfProject() {
+		List<Project> findAll = repository.findAll();
+		return findAll;
+	}
+
+	@Override
+	public String deleteProject(Long projectId) {
+		Project findProject = repository.findById(projectId).get();
+		if(findProject != null) {
+			repository.deleteById(projectId);
+			return "Delete Successfully";
+		}
+		return null;
+	}
+
+	@Override
+	public Project updateProject(Long projectId, Project updatedProject) {
+		Project existingProject = repository.findById(projectId).get();
+		
+		if(existingProject != null) {
+			existingProject.setProjectName(updatedProject.getProjectName());
+			existingProject.setProjectDescription(updatedProject.getProjectDescription());
+			existingProject.setStartDate(updatedProject.getStartDate());
+			existingProject.setEndDate(updatedProject.getEndDate());
+			repository.save(existingProject);
+		}
+		return null;
+	}
+
+}
